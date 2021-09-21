@@ -1,0 +1,28 @@
+@import url( 'theme-colors-css.php' );
+
+body#tinymce { margin: 16px; }
+
+:focus { outline: none; }
+
+div, p, h1, h2, h3, h4, h5, h6, li {
+  transition: all 0.4s;
+}
+
+div:hover, p:hover, h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, li:hover {
+  outline: 1px dashed #a3a3a3;
+}
+
+div.row, div.container { outline: none }
+
+div.row:hover, ul:hover, div.container:hover {
+  background-color: rgba(124, 124, 124, 0.08);
+}
+
+.mce-content-body a.btn.btn-lg[data-mce-selected] {
+    padding: .5rem 1.5rem;
+    margin: 0;
+    border-radius: inherit;
+    border-style: dotted;
+    box-shadow: 0 0 0 1px #bfe6ff;
+    background: #868686;
+}

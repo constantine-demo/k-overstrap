@@ -1,0 +1,62 @@
+/*
+ * Main column width
+ * This changes it from the default 580px to 1024px
+ */
+.wp-block, .k-editor-container {
+    max-width: 1024px;
+}
+.k-editor-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-block[data-align=full] .wp-block:not(.k-bs-grid-admin-col) {
+    max-width: none;
+}
+.k-editor-container {
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+/*
+ * Width of "wide" blocks
+ * This changes it from the default 1080px to 1280px
+ */
+.wp-block[data-align="wide"] {
+    max-width: 1280px;
+}
+/*
+ * Remoove marging beetween blocks in editor
+ */
+.block-editor-block-list__block {
+    /*margin-top: 0;
+    margin-bottom: 0;*/
+}
+/* fix padding */
+.wp-block-group.has-background {
+    padding: 0;
+}
+/*
+ * Block editor custom wide blocks remoove margin
+ */
+.is-root-container > [data-type="k-blocks-slick-hero-parent/k-blocks"][data-align="full"],
+.is-root-container > [data-type="k-blocks-bs-section/k-blocks"][data-align="full"],
+.is-root-container > [data-type="k-blocks-big-hero/k-blocks"][data-align="full"],
+.is-root-container > [data-type="k-blocks-text-wide/k-blocks"][data-align="full"] {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+/*
+ * Block editor UNDERSTRAP CSS FIXES
+ */
+ /* fix label verticalalign in ispector */
+ .components-font-size-picker__number-container label { margin-bottom: 0; }
+ /* background font gutenberg */
+.edit-post-layout .interface-interface-skeleton__content {
+    background-color: white;
+}
+:not(.editor-styles-wrapper) a {
+    color: #0073aa;
+}
+:not(.editor-styles-wrapper) a:active, :not(.editor-styles-wrapper) a:hover {
+    color: #006799;
+}
