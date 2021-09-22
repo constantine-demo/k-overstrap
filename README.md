@@ -1,8 +1,8 @@
 # K Overstrap
 
-This is a daughter theme for Wordpress Understrap theme.
-A lot of new functionality added so is is almost like a new theme now.  
-<a href="https://github.com/understrap/understrap-child">Understrap</a> theme should be installed for it to work.  
+This is a daughter theme for Wordpress Understrap theme.  
+A lot of new functionality added so is is almost like a new theme now.    
+<a href="https://github.com/understrap/understrap-child">Understrap</a> theme should be installed for it to work.   
 
 ## Installation
 Install the parent theme Understrap first: https://github.com/understrap/understrap or https://wordpress.org/themes/understrap/  
