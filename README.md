@@ -10,4 +10,5 @@ IMPORTANT: If you download Understrap from GitHub make sure you rename the "unde
 Upload the understrap-child folder to your wp-content/themes directory\
 Go into your WP admin backend\
 Go to "Appearance -> Themes"  \
+\
 Activate the Understrap Child theme  
