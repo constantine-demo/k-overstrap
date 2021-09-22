@@ -25,7 +25,7 @@
 					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 				)
 			); ?>
-			<?php echo do_shortcode("[account_icon][cart_icon]"); ?>
+			<?php if (class_exists('WooCommerce')) echo do_shortcode("[account_icon][cart_icon]"); ?>
 		</div>
 	</div>
 </div>
@@ -64,7 +64,7 @@
     <?php the_site_identity() ?>
 
 		<div class="toggler-group d-flex align-items-center">
-			<?php echo do_shortcode("[account_icon][cart_icon]"); ?>
+			<?php if (class_exists('WooCommerce')) echo do_shortcode("[account_icon][cart_icon]"); ?>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
