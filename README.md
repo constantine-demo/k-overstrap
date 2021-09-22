@@ -9,7 +9,7 @@ A lot of new functionality added so is is almost like a new theme now.
 ## Installation
 Install the parent theme Understrap first: https://github.com/understrap/understrap or https://wordpress.org/themes/understrap/
 
-IMPORTANT: If you download Understrap from GitHub make sure you rename the "understrap-master.zip" file to "understrap.zip" or you might have problems using this child theme!
+*IMPORTANT*: If you download Understrap from GitHub make sure you rename the "understrap-master.zip" file to "understrap.zip" or you might have problems using this child theme!
 
 Upload the understrap-child folder to your wp-content/themes directory
 
