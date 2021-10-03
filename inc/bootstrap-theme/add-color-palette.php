@@ -3,7 +3,7 @@
 /* ------------------------------------------------------ */
 /*    adding selected colors to block editor palette      */
 /* ------------------------------------------------------ */
-function mytheme_setup_theme_supported_features() {
+function enable_custom_color_palette() {
   global $default_styles;
   add_theme_support( 'editor-color-palette', array(
     array(
@@ -58,4 +58,4 @@ function mytheme_setup_theme_supported_features() {
     ),
   ) );
 }
-add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
+add_action( 'after_setup_theme', 'enable_custom_color_palette', 99 );

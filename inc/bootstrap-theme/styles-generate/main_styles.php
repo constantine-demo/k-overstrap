@@ -6,6 +6,16 @@ $main_styles = '
   /*  -----------------  COLORS  ----------------  */
   /*-----------------------------------------------*/
 
+  /*  setting css variables colors  */
+  :root {
+    --primary: '. $primary_color.';
+    --secondary: '. $secondary_color.';
+    --success: '. $success_color.';
+    --info: '. $info_color.';
+    --warning: '. $warning_color.';
+    --danger: '. $danger_color.';
+  }
+
   /*  block editor colors  */
 
   .has-primary-color { color: '. $primary_color.'!important; }

@@ -563,6 +563,37 @@ figure.k-block-slick-classic-item, .editor-styles-wrapper figure.k-block-slick-c
 @media (min-width: 1200px) { .wp-block-cover.is-style-container .wp-block-cover__inner-container { max-width: 1140px; } }
 .wp-block .wp-block-cover.is-style-container .wp-block-cover__inner-container { max-width: 1024px; }
 
+/* separator styles */
+.wp-block-separator.is-style-default {
+    width: 10rem;
+		height: 3px;
+    margin-right: auto;
+		margin-left: auto;
+		border: none;
+}
+.wp-block-separator.is-style-default:not(.has-background) {
+	background-color: #c1c1c1
+}
+
+/* gutenberg and tiny blockquote styles */
+blockquote {
+	max-width: 800px;
+	margin: 2em auto;
+	padding: 1em 40px;
+	line-height: 1.45;
+	position: relative;
+	color: #383838;
+	border-left:3px dashed #c1c1c1;
+	background:#eee;
+	}blockquote cite {
+	color: #999999;
+	font-size: 14px;
+	display: block;
+	margin-top: 5px;
+}
+blockquote cite:before {
+	content: “\2014 \2009”;
+}
 
 /*          Gtranslate styles
 ----------------------------------------- */
@@ -587,25 +618,4 @@ button.submit font, button[type="submit"] font, a.btn font {
 }
 ul#main-menu, ul#menu-main-menu {
     text-transform: capitalize;
-}
-
-/*              Blockquote Styles
-------------------------------------------------*/
-blockquote {
-	max-width: 800px;
-	margin: 2em auto;
-	padding: 1em 40px;
-	line-height: 1.45;
-	position: relative;
-	color: #383838;
-	border-left:3px dashed #c1c1c1;
-	background:#eee;
-	}blockquote cite {
-	color: #999999;
-	font-size: 14px;
-	display: block;
-	margin-top: 5px;
-}
-blockquote cite:before {
-	content: “\2014 \2009”;
 }

@@ -91,7 +91,7 @@ add_action( 'widgets_init', 'manage_landing_widgets', 11 );
 function landing_remove_page_template( $pages_templates ) {
     unset( $pages_templates['template-dummy.php'] );
     unset( $pages_templates['page-templates/both-sidebarspage.php'] );
-	unset( $pages_templates['page-templates/empty.php'] );
+		unset( $pages_templates['page-templates/empty.php'] );
     return $pages_templates;
 }
 add_filter( 'theme_page_templates', 'landing_remove_page_template' );
@@ -106,6 +106,9 @@ function logo_size_change(){
 	) );
 }
 add_action( 'after_setup_theme', 'logo_size_change', 11 );
+
+/* remoove new widget support */
+add_filter( 'use_widgets_block_editor', '__return_false' );
 
 /*function ms_setup() {
 set_post_thumbnail_size( 500, 500, true );
