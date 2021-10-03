@@ -8,12 +8,20 @@ $main_styles = '
 
   /*  setting css variables colors  */
   :root {
+    --text-color:  '.$body_text_color.';
     --primary: '. $primary_color.';
+    --primary-darker: '. $primary_color_darker.';
+    --primary-lighter: '. $primary_color_lighter.';
     --secondary: '. $secondary_color.';
+    --secondary-darker: '. $secondary_color_darker.';
+    --secondary-lighter: '. $secondary_color_lighter.';
     --success: '. $success_color.';
     --info: '. $info_color.';
     --warning: '. $warning_color.';
     --danger: '. $danger_color.';
+    --border-radius: '.$main_border_radius.';
+    --border-color: '.$various_element_border_color.';
+    --alt-bg-color: '.$alt_background_color.';
   }
 
   /*  block editor colors  */
