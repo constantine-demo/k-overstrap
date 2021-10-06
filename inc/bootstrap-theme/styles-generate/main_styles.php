@@ -48,9 +48,8 @@ $main_styles = '
   body { color:  '.$body_text_color.'; }
 
   /*   simple link   */
-
-  a { color:  '.$simple_link_color.'; text-decoration: none; background-color: transparent; }
-  a:hover { color:  '.$simple_link_color_hover.'; text-decoration: underline; }
+  a, .block-editor-block-list__layout a { color:  '.$simple_link_color.'; text-decoration: none; background-color: transparent; }
+  a:hover, .block-editor-block-list__layout a:hover { color:  '.$simple_link_color_hover.'; text-decoration: underline; }
 
   /*  primary colors  */
 
