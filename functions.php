@@ -124,12 +124,6 @@ function check_if_page_gutenberg( $can_edit, $post ){
 add_filter('use_block_editor_for_post', 'check_if_page_gutenberg',10,2);
 
 /*
-------------- Register Block Templates ------------ */
-add_action('init', function() {
-	register_block_style('core/cover', [ 'name' => 'container', 'label' => __('Boxed'), ]);
-});
-
-/*
 ------------- Additional menus ------------ */
 add_action('init', function() {
 	if ( get_theme_mod('bootstap_nav_template_file_path') == 'custom-navigation-template.php' ) {
@@ -156,3 +150,19 @@ return
 	'</nav>';
 }
 add_shortcode('main_menu', 'print_menu_shortcode');
+
+/*
+ * --------------- wp menu allways uncollapsed ----------------*/
+function make_menu_unfolded() {
+	print '<script>jQuery(document).ready(function(){jQuery("body").removeClass("folded")})</script>';
+	print '<style>#collapse-menu { display:none; }</style>';
+}
+add_filter( 'admin_head', 'make_menu_unfolded' );
+
+/*
+------------- Register Block Templates ------------ */
+add_action('init', function() {
+	register_block_style('core/cover', [ 'name' => 'container', 'label' => __('Boxed'), ]);
+});
+
+
