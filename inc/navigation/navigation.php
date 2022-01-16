@@ -10,6 +10,9 @@ $all_navbar_templates_array = array(
 	'inc/navigation/header-style-transparent.php' => __( 'Transparent fixed top' ),
 	'custom-navigation-template.php' => __( 'Custom navigation template' ),
 );
+if ( class_exists( 'woocommerce' ) ) {
+	$all_navbar_templates_array = array('inc/navigation/header-style-woocommerce.php' => __( 'Default woocommerce navigation' )) + $all_navbar_templates_array;
+}
 $default_navbar_template = 'inc/navigation/header-style-default.php';
 $transparent_navbar_controls_template = 'inc/navigation/header-style-transparent.php';
 $transparent_navbar_2_conumns_template = 'inc/navigation/header-style-two-columns.php';
@@ -247,7 +250,7 @@ function header_otions_customize_register( $wp_customize ) {
     'code_type' => 'text/html',
     'settings'  => 'content_above_navbar',
     'section'   => 'header_settings',
-		'active_callback' => 'is_not_custom',
+		//'active_callback' => 'is_not_custom',
  ) ) );
 
 

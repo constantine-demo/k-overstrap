@@ -28,11 +28,11 @@ html {
 body.page-template-fullwidthpage { overflow-x: hidden; }
 /* group block fix */
 .wp-block-group.alignfull, .wp-block[data-align="full"] .wp-block-group {
-    padding-left: 16px;
-    padding-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .wp-block-group.has-background {
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 
@@ -69,18 +69,19 @@ body.admin-bar .sticky-top  { top: 32px; }
 /* sticky navigation top offcet mobile */
 @media screen and (max-width: 782px) {
 	body.admin-bar .sticky-top  { top: 46px; }
+	body.admin-bar .fixed-top.mobile-navbar  { top: 46px; }
 }
 
 /* -------------------------------------- */
 /*           TRANSPARENT HEADER           */
 /* -------------------------------------- */
 .transparent-sticky {
-		position: fixed!important;
-		left: 0;
-		top: 0;
-		padding: 0;
-		width: 100%;
-		z-index: 999;
+	position: fixed!important;
+	left: 0;
+	top: 0;
+	padding: 0;
+	width: 100%;
+	z-index: 999;
 }
 
 .transparent-sticky { position: absolute!important; }
@@ -99,6 +100,13 @@ body.admin-bar .transparent-sticky   { top: 32px; }
 @media (min-width: 992px) { body.admin-bar .transparent-sticky:not(.fixed)   { top: 32px; } }
 /* disable unsticky wordpress adminbar on mobile activated before*/
 @media screen and (max-width: 600px) { #wpadminbar { position: fixed!important; } }
+
+/* add padding to menu link mobile (for better looking when active ) */
+.navbar-collapse .nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
 
 /* ------------------------------------ */
 /*           OUTER IMAGE BLOCK          */
@@ -165,17 +173,17 @@ body.admin-bar .transparent-sticky   { top: 32px; }
   color: inherit!important;
 }
 ul.widgets {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 .footer-wrapper ul.widgets {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 h3.footer-wigget-title {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 #wrapper-footer .widget.widget_text .textwidget>p {
-    margin-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 /* ------------------------------------ */
@@ -183,8 +191,12 @@ h3.footer-wigget-title {
 /* ------------------------------------ */
 /* temporary fix!!! find better solution */
 .btn-outline-primary.disabled, .btn-outline-primary:disabled, .wpcf7 input.disabled[type=submit], .wpcf7 input:disabled[type=submit] {
-    color: #747474!important;
-		border-color: #747474!important;
+	color: #747474!important;
+	border-color: #747474!important;
+}
+/* hide widget button in customizer */
+.widget span.customize-partial-edit-shortcut {
+    display: none;
 }
 
 /* ------------------------------------ */
@@ -195,63 +207,74 @@ h3.footer-wigget-title {
 
 /* single product quantity area sizes */
 .cart .quantity input[type="number"] {
-    line-height: calc( 1.5rem + 0.75em );
-    padding: 0;
-    margin: 0;
-    border: 1px solid black;
+  line-height: calc( 1.5rem + 0.75em );
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
 }
 .woocommerce div.product form.cart div.quantity {
-    float: left;
-    margin: 0 0.75rem 0 0;
+  float: left;
+  margin: 0 0.75rem 0 0;
 }
 /* delete from cart con fix */
 .woocommerce a.remove {
-    line-height: 0.85em;
-		font-size: 1.6em;
-		font-weight: normal;
-		transition: background-color 0.4s, color 0.4s;
+	line-height: 0.85em;
+	font-size: 1.6em;
+	font-weight: normal;
+	transition: background-color 0.4s, color 0.4s;
+}
+/* make buttone on woocommerce message smaller */
+.woocommerce-message a.button.wc-forward {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+.woocommerce-notices-wrapper .woocommerce-message {
+  line-height: 1.8rem;
 }
 /* my account padding mobile */
 .woocommerce-MyAccount-navigation {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 /* sidebar padding fixes */
 div#right-sidebar, div#left-sidebar {
-    padding-top: 5.8rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-top: 5.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 /* widjets fixes */
 div#right-sidebar .widget, div#left-sidebar .widget {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 h1.entry-title {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .woocommerce .form-row {
 	display:block;
 }
 .woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
-    display: block;
+  display: block;
 }
 /* fix form fields in account zone in adress billing form */
+
 .single-country .select2-container--default .select2-selection--single .select2-selection__rendered {
-    line-height: normal;
-		padding-left: 0;
-		padding-right: 0;
+	line-height: normal;
+	padding-left: 0;
+	padding-right: 0;
 }
 .single-country span.select2-selection.select2-selection--single, input#shipping_state,
 .woocommerce-account input[type="text"], .woocommerce-account input[type="email"],
 .woocommerce-account input[type="password"] {
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
 }
 .single-country .select2-container--default .select2-selection--single .select2-selection__arrow {
-    top: 6px;
-    right: 6px;
+	top: 6px;
+	right: 6px;
 }
 .woocommerce-address-fields__field-wrapper, .woocommerce-EditAccountForm>.clear {
-		margin-bottom: 1.5rem
+	margin-bottom: 1.5rem
 }
 .woocommerce-Message { line-height: 2.25rem; }
 .woocommerce-Message .btn { margin-right: 1rem; }
@@ -259,17 +282,17 @@ h1.entry-title {
 
 /* woocommerce category widjet style */
 .woocommerce.widget_product_categories ul.product-categories {
-		list-style-type: none!important;
-		padding-left: 0;
+	list-style-type: none!important;
+	padding-left: 0;
 }
 .woocommerce.widget_product_categories li.cat-item:before {
-		color: #212529;
-    font: normal normal normal 14px/1 FontAwesome;
-		content: "\f054";
-		margin-right: 0.5rem;
+	color: #212529;
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f054";
+	margin-right: 0.5rem;
 }
 .woocommerce.widget_product_categories li.cat-item {
-		margin-bottom: 0.6rem;
+	margin-bottom: 0.6rem;
 }
 /* only filter shop page on mobile */
 @media (max-width: 767px) {
@@ -278,27 +301,27 @@ h1.entry-title {
 }
 /* woocommerce onsale badje */
 .woocommerce span.onsale {
-		min-height: unset;
-		min-width: 4rem;
-		padding: 0.3rem;
-		font-size: 1rem;
-		position: absolute;
-		border-radius: 0;
-		background-color: #bbbbbb;
-		color: #fff;
-		line-height: 1.5;
-		transform: rotate(-10deg);
+	min-height: unset;
+	min-width: 4rem;
+	padding: 0.3rem;
+	font-size: 1rem;
+	position: absolute;
+	border-radius: 0;
+	background-color: #bbbbbb;
+	color: #fff;
+	line-height: 1.5;
+	transform: rotate(-10deg);
 }
 
 /* fix field state/country */
 input#billing_state {
-		line-height: 1.6;
-		font-size: 1rem;
-		padding: .375rem .75rem;
+	line-height: 1.6;
+	font-size: 1rem;
+	padding: .375rem .75rem;
 }
 /* 	fix woo columns */
 .woocommerce-columns>.woocommerce-column {
-    max-width: unset;
+  max-width: unset;
 }
 /* --- woocommerce block product grid styles --- */
 .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
@@ -310,6 +333,15 @@ input#billing_state {
   outline: none;
   line-height: 1.5;
   transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}
+/* changing padding for single tabs for better look when link active */
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	padding-left: 0;
+	padding-right: 0;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li>a {
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 /* ------------------------------------------ */
@@ -379,7 +411,11 @@ a.rezolution-cart .count {
     font-weight: bold;
     text-align: center;
 }
-
+.navbar-light .site-icons-block { color: rgba(0,0,0,.5); }
+.navbar-light .site-icons-block:hover { color: rgba(0,0,0,.7); }
+.navbar-dark .site-icons-block { color: rgba(255,255,255,.5); }
+.navbar-dark .site-icons-block:hover { color: rgba(255,255,255,.7); }
+.navbar-dark a.rezolution-cart .count { background-color: gray; }
 
 /* ------------------------------------------ */
 /*         SHORTCODES DEFAULT STYLES          */
@@ -404,11 +440,6 @@ a.rezolution-cart .count {
 .post-navigation { margin-bottom: 0.8rem; }
 .blog .entry-content { margin-top: 1rem; }
 .entry-meta { margin-bottom: 0.3rem; }
-ul.wp-block-latest-posts>li>a {
-    margin-top: 0.5rem;
-    display: block;
-    font-size: 1.4rem;
-}
 ul.wp-block-latest-posts>li .understrap-read-more-link {
     margin-top: 0.5rem;
 }
@@ -600,6 +631,59 @@ blockquote {
 }
 blockquote cite:before {
 	content: “\2014 \2009”;
+}
+
+/* woo search block default style */
+.wc-block-product-search__fields .wc-block-product-search__button {
+	border: 1px solid #949494;
+	background: #f7f7f7;
+  color: #32373c;
+}
+.wc-block-product-search__fields .wc-block-product-search__field {
+	border: 1px solid #949494;
+	padding: 6px 8px;
+	line-height: 1.8;
+}
+.block-editor-block-list__block .components-text-control__input {
+	border-color: transparent;
+	font-size: 16px;
+	box-shadow: none;
+}
+
+/* separator (line) blocks style */
+.wp-block-separator.is-style-wide {
+    border-bottom-width: 0;
+		border-top-width: 1px;
+}
+hr.block-editor-block-list__block { opacity: 1; }
+/*.wp-block-separator.is-style-dots:before {
+    font-size: 2.5em;
+    letter-spacing: 1em;
+    padding-left: 1em;
+    content: "···";
+    color: currentColor;
+    font-size: 2em;
+    letter-spacing: 2em;
+    padding-left: 2em;
+    font-family: serif;
+}*/
+
+/* ------------------------------------------ */
+/*           WIDGET BLOCKS STYLES             */
+/* ------------------------------------------ */
+.widget_block ul {
+	padding-left: 25px;
+}
+.widget_block ol.wp-block-latest-comments {
+	padding-left: 0;
+}
+.widget_block .wp-block-latest-posts__list,
+.widget_block .wp-block-archives-list,
+.widget_block .wp-block-categories-list,
+.widget_block ul.wp-block-page-list {
+	padding-left: 0;
+	font-size: 1.15rem;
+	list-style-type: none;
 }
 
 /*          Gtranslate styles
