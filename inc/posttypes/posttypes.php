@@ -14,8 +14,8 @@ function post_type_activate() {
   if ( get_theme_mod( 'services_posttype_active' ) ) { services_post_type_generate(); }
   if ( get_theme_mod( 'portfolio_posttype_active' ) ) { portfolio_post_type_generate(); }
   if ( get_theme_mod( 'team_posttype_active' ) ) { team_post_type_generate(); }
-	if ( get_theme_mod( 'catalog_posttype_active' ) ) { catalog_post_type_generate(); }
-	if ( get_theme_mod( 'countries_posttype_active' ) ) { countries_post_type_generate(); }
+  if ( get_theme_mod( 'catalog_posttype_active' ) ) { catalog_post_type_generate(); }
+  if ( get_theme_mod( 'countries_posttype_active' ) ) { countries_post_type_generate(); }
 }
 add_action( 'init', 'post_type_activate', 0 );
 

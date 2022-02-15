@@ -9,6 +9,15 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+/*
+ * Default width of reusable blocks
+ */
+.wp-block.is-reusable {
+    margin-left: initial;
+    margin-right: initial;
+    max-width: initial;
+}
+
 .wp-block[data-align=full] .wp-block:not(.k-bs-grid-admin-col) {
     max-width: none;
 }
