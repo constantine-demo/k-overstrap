@@ -5,11 +5,16 @@
 html {
   /*scroll-behavior: smooth; */
 }
+p, p.wp-block {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
 
 
 /* ------------------------------------ */
 /*           WIDE WIDTH SUPPORT         */
 /* ------------------------------------ */
+/*
 .page-template-template-no-header .alignfull, .page-template-template-no-header .alignwide,
 .page-template-fullwidthpage .alignfull, .page-template-fullwidthpage .alignwide {
 	width: 100vw;
@@ -23,6 +28,13 @@ html {
 		margin-right: -200px;
 		margin-left: -200px;
 	}
+}
+*/
+/* disable theme wide width */
+body.understrap-no-sidebar .alignfull, body.understrap-no-sidebar .alignwide, body.understrap-no-sidebar .wp-block-cover.alignfull, body.understrap-no-sidebar .wp-block-cover.alignwide {
+    margin: initial;
+    max-width: unset;
+    width: unset;
 }
 
 body.page-template-fullwidthpage { overflow-x: hidden; }
@@ -111,31 +123,33 @@ body.admin-bar .transparent-sticky   { top: 32px; }
 /* ------------------------------------ */
 /*           OUTER IMAGE BLOCK          */
 /* ------------------------------------ */
-.outer-img-right {
-	height: 100%;
-	background-size: cover;
-	background-position: center;
+.outer-img-right, .outer-img-left {
+  min-height: 25rem;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.editor-styles-wrapper .outer-img-left { margin-left: 0!important; }
+.editor-styles-wrapper .outer-img-right { margin-right: 0!important; }
+
+.page-template-template-bootstrap-builder-php .outer-img-right {
 	margin-right: calc( 100% - 50vw );
-	min-height: 25rem;
 }
-.outer-img-left {
-	height: 100%;
-	background-size: cover;
-	background-position: center;
+.page-template-template-bootstrap-builder-php .outer-img-left {
 	margin-left: calc( 100% - 50vw );
-	min-height: 25rem;
 }
-.outer-img-right.third {
+.page-template-template-bootstrap-builder-php .outer-img-right.third {
 	margin-right: calc( 150% - 50vw );
 }
-.outer-img-left.third {
+.page-template-template-bootstrap-builder-php .outer-img-left.third {
 	margin-left: calc( 150% - 50vw );
 }
 @media (max-width: 991px) {
-	.outer-img-right, .outer-img-right.third {
+	.page-template-template-bootstrap-builder-php .outer-img-right, .outer-img-right.third {
 		margin-right: calc( 50% - 50vw );
 	}
-	.outer-img-left, .outer-img-left.third {
+	.page-template-template-bootstrap-builder-php .outer-img-left, .outer-img-left.third {
 		margin-left: calc( 50% - 50vw );
 	}
 }
@@ -204,6 +218,13 @@ h3.footer-wigget-title {
 /* ------------------------------------ */
 .woocommerce div.product .woocommerce-tabs ul.tabs li::before { display: none; }
 .woocommerce div.product .woocommerce-tabs ul.tabs li::after { display: none; }
+/* woocommerce inputs field */
+.woocommerce-Input--text, .woocommerce-Input--password, .woocommerce-Input--email {
+  padding: 0.6rem;
+}
+.select2-container .select2-selection--single { height: 38px; }
+.select2-container--default .select2-selection--single .select2-selection__rendered { line-height: 38px; }
+.select2-container--default .select2-selection--single .select2-selection__arrow { height: 36px; }
 
 /* single product quantity area sizes */
 .cart .quantity input[type="number"] {
@@ -257,7 +278,7 @@ h1.entry-title {
   display: block;
 }
 /* fix form fields in account zone in adress billing form */
-
+/*
 .single-country .select2-container--default .select2-selection--single .select2-selection__rendered {
 	line-height: normal;
 	padding-left: 0;
@@ -279,9 +300,9 @@ h1.entry-title {
 .woocommerce-Message { line-height: 2.25rem; }
 .woocommerce-Message .btn { margin-right: 1rem; }
 .widget_price_filter h3, .woocommerce .widget_price_filter .price_slider { margin-bottom: 1.7rem; }
-
+*/
 /* woocommerce category widjet style */
-.woocommerce.widget_product_categories ul.product-categories {
+/*.woocommerce.widget_product_categories ul.product-categories {
 	list-style-type: none!important;
 	padding-left: 0;
 }
@@ -294,6 +315,7 @@ h1.entry-title {
 .woocommerce.widget_product_categories li.cat-item {
 	margin-bottom: 0.6rem;
 }
+*/
 /* only filter shop page on mobile */
 @media (max-width: 767px) {
 	.woocommerce-result-count { display: none; }
@@ -314,15 +336,15 @@ h1.entry-title {
 }
 
 /* fix field state/country */
-input#billing_state {
+/*input#billing_state {
 	line-height: 1.6;
 	font-size: 1rem;
 	padding: .375rem .75rem;
-}
+}*/
 /* 	fix woo columns */
-.woocommerce-columns>.woocommerce-column {
+/*.woocommerce-columns>.woocommerce-column {
   max-width: unset;
-}
+}*/
 /* --- woocommerce block product grid styles --- */
 .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
   background-color: transparent;
@@ -532,7 +554,7 @@ ul.wp-block-latest-posts>li .understrap-read-more-link {
     line-height: 20px;
     text-align: center;
     color: #000;
-		text-shadow: 0 0 2px #ffffff;
+		text-shadow: 0 0 3px #ffffff;
     opacity: 0.25;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -544,7 +566,7 @@ ul.wp-block-latest-posts>li .understrap-read-more-link {
 /* arrows positioning & styling */
 .slick-next:before { content: "\f054"; }
 .slick-prev:before { content: "\f053"; }
-.slick-prev:before, .slick-next:before { color: #1d1d1d; text-shadow: 0 0 2px #ffffff; }
+.slick-prev:before, .slick-next:before { color: #1d1d1d; text-shadow: 0 0 3px #ffffff; }
 .light-arrows .slick-prev:before, .light-arrows .slick-next:before { color: #ffffff; text-shadow: 0 0 2px #1d1d1d; }
 .slick-prev, .slick-next { top: 50%; transform: translate(0, -50%); }
 .slick-prev { left: -30px; }
@@ -554,8 +576,8 @@ ul.wp-block-latest-posts>li .understrap-read-more-link {
 .alignfull.arrows-inner .slick-prev { left: 10px; z-index: 1; }
 .alignfull.arrows-inner .slick-next { right: 10px; z-index: 1; }
 .slick-dotted.slick-slider { margin-bottom: 30px; }
-.slick-dotted.dots-inner.slick-slider { margin-bottom: 0px; }
-@media (max-width: 767px) {
+.dots-inner .slick-dotted.slick-slider { margin-bottom: 0px; }
+@media (max-width: 576px) {
 		.hero-gallery:not(.arrows-outer) .slick-arrows { margin-top: 50px; }
 		.hero-gallery:not(.arrows-outer) .slick-prev { left: calc( 50% - 30px ); }
 		.hero-gallery:not(.arrows-outer) .slick-next { right: calc( 50% - 30px ); }
@@ -611,7 +633,22 @@ figure.k-block-slick-classic-item, .editor-styles-wrapper figure.k-block-slick-c
     letter-spacing: 1em;
     padding-left: 1em;
 }
+/* bs-image block */
+.k-blocks-img-caption-inner-content>.block-editor-inner-blocks>.block-editor-block-list__layout>:last-child,
+.k-blocks-img-caption-inner-content>:last-child {
+    margin-bottom: 0;
+}
+p.has-background {
+    padding: 0.5rem 1rem;
+}
+h2.has-background, h3.has-background, h4.has-background, h5.has-background, h6.has-background {
+    padding: 0.5rem 1rem;
+}
 
+body:not(.page-template-template-bootstrap-builder-php) .k-bs-section-block .container {
+  padding-right: 0;
+  padding-left: 0;
+}
 
 /* gutenberg and tiny blockquote styles */
 blockquote {
@@ -667,6 +704,12 @@ hr.block-editor-block-list__block { opacity: 1; }
     padding-left: 2em;
     font-family: serif;
 }*/
+/* remoove last element padding for block style */
+.k-wide-block-inercontent > p:last-child,
+.k-bs-section-block-inner-content > p:last-child {
+  margin-bottom: 0;
+}
+
 
 /* ------------------------------------------ */
 /*           WIDGET BLOCKS STYLES             */

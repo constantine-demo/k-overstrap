@@ -42,6 +42,7 @@ function add_contacts_shortcode($atts) {
 add_shortcode('contacts', 'add_contacts_shortcode');
 
 add_shortcode('phone', function() { return get_option('site_phone'); } );
+add_shortcode('phone_numbers', function() { return preg_replace( '/[^0-9]/', '', get_option('site_phone') ); } );
 add_shortcode('mail', function() { return get_option('site_mail'); } );
 add_shortcode('adress', function() { return get_option('site_adress'); } );
 add_shortcode('year', function() { return date('Y', time()); } );
@@ -62,7 +63,7 @@ function add_social_shortcode($atts) {
 		$current_si_link = 'social_icon_fa_link_'.$sl;
 		if ( get_option( $current_si_class ) and get_option( $current_si_link ) ) {
 			$s .= '<a href="'.get_option( $current_si_link ).'">';
-			if ( $atts['circle'] ) $s .= '<span class="fa-stack '.$atts['size_class'].'"><i class="fa fa-circle fa-stack-2x '.$atts['circle_color_class'].'"></i>';
+			if ( $atts['circle'] ) $s .= '<span class="fa-stack '.$atts['size_class'].'"><i class="fa fa-circle fa-stack-2x icon-inner-'.get_option( $current_si_class ).' '.$atts['circle_color_class'].'"></i>';
 			$add_class = ($atts['circle']) ? 'with-circle fa-stack-1x' : 'no-circle '.$atts['size_class'];
 			$s .= '<i class="fa '.get_option( $current_si_class ).' '.$add_class.' '.$atts['color_class'].'" aria-hidden="true"></i>';
 			if ( $atts['circle'] ) $s .= '</span>';
@@ -94,3 +95,22 @@ function add_secondary_button_shortcode( $atts ) {
     return '<a href="'.$atts['href'].'" class="btn btn-secondary btn-shortcode">'.$atts['name'].'</a>';
 }
 add_shortcode( 'button_secondary', 'add_secondary_button_shortcode' );
+
+
+function add_caller_button_shortcode( $atts ) {
+	$number = preg_replace( '/[^0-9+]/', '', get_option('site_phone') );
+    $atts = shortcode_atts( [
+			'phone' => $number,
+		], $atts, 'caller_button' );
+    return '
+		<a href="tel:'.$atts['phone'].'" class="caller-button d-inline-block">
+			<span class="fa-stack fa-2x">
+				<i class="fa fa-circle fa-stack-2x icon-inner-fa-phone-square text-success"></i>
+				<i class="fa fa-volume-control-phone with-circle fa-stack-1x text-light" aria-hidden="true"></i>
+			</span>
+		</a>';
+}
+add_shortcode( 'caller_button', 'add_caller_button_shortcode' );
+
+
+

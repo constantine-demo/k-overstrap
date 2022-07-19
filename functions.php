@@ -20,7 +20,8 @@ function main_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'main_enqueue_styles', 99 );
 
 function block_editor_styles() {
-	// wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/js/theme.min.js', array('jquery'), null, true  );
+	//wp_enqueue_script( 'theme-bootstrap4', get_template_directory_uri() . '/js/theme-bootstrap4.js', array('jquery'), null, true  );
+	wp_enqueue_script( 'bigbox-wp-editor-page-template-class', get_stylesheet_directory_uri() . '/js/block-editor-class.js', [ 'wp-editor', 'wp-element', 'wp-compose', 'wp-data', 'wp-plugins' ], null, true );
 }
 add_action( 'enqueue_block_editor_assets', 'block_editor_styles' );
 
@@ -54,9 +55,11 @@ function add_admin_styles() {
 add_action( 'admin_enqueue_scripts', 'add_admin_styles' );
 
 function setup_theme_supported_features() {
-	add_theme_support( 'align-wide' );
+	remove_theme_support( 'align-wide' );
+	remove_theme_support( 'align-full' );
+
 }
-add_action( 'after_setup_theme', 'setup_theme_supported_features' );
+add_action( 'after_setup_theme', 'setup_theme_supported_features', 1000 );
 
 function manage_landing_widgets(){
 	unregister_sidebar( 'footerfull' );
@@ -136,7 +139,7 @@ return
 			'menu_id'         => 'main-menu',
 			'depth'           => 1,
 			'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-			'echo'						=> false
+			'echo'			  => false
 		)
 	).
 	'</nav>';

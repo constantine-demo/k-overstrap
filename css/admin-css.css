@@ -9,6 +9,35 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/*
+ * Styling BOOTSTRAP BUILDER template in gutenbrg
+ */
+.page-template-template-bootstrap-builder-php .wp-block, 
+.page-template-template-bootstrap-builder-php .k-editor-container {
+    max-width: unset;
+}
+.page-template-template-bootstrap-builder-php .k-editor-container {
+	margin-left: 0;
+	margin-right: 0;
+}
+.editor-styles-wrapper.page-template-template-bootstrap-builder-php {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+.page-template-template-bootstrap-builder-php .edit-post-visual-editor__post-title-wrapper {
+    margin-top: 0;
+    padding: 0.5rem 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-template-template-bootstrap-builder-php .editor-post-title.editor-post-title__input {
+    font-size: 25px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #757575;
+}
+
 /*
  * Default width of reusable blocks
  */
